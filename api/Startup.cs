@@ -26,6 +26,8 @@ namespace api
 
             services.AddScoped<UsersService>();
             services.AddScoped<UsersRepository>();
+            services.AddScoped<PersonsService>();
+            services.AddScoped<PersonsRepository>();
 
             services.AddControllers();
         }

@@ -7,38 +7,44 @@ namespace api.Data
     {
         public static void Initialize(ApiDbContext db)
         {
-            if (db.Users.Any())
+            if (db.Persons.Any())
                 return;
 
-            var users = new User[]
+            var persons = new Person[]
             {
-                new User
+                new ()
                 {
-                    Nickname = "gustas",
-                    Password = "pultas",
-                    Mood = "rage"
+                    Name = "gus",
+                    Animal = new Animal()
+                    {
+                        Name = "Mr.buble",
+                        PriceAMonth = 50,
+                        Type = "Fish"
+                    }
                 },
-                new User
+                new ()
                 {
-                    Nickname = "edvinas",
-                    Password = "java",
-                    Mood = "work"
+                    Name = "antans",
+                    Animal = new Animal()
+                    {
+                        Name = "Pete",
+                        PriceAMonth = 120,
+                        Type = "Dog"
+                    }
                 },
-                new User
+                new ()
                 {
-                    Nickname = "joris",
-                    Password = "kaitas",
-                    Mood = "chill"
-                },
-                new User
-                {
-                    Nickname = "agota",
-                    Password = "kitten",
-                    Mood = "chat"
+                    Name = "tom",
+                    Animal = new Animal()
+                    {
+                        Name = "Ana",
+                        PriceAMonth = 60,
+                        Type = "Rat"
+                    }
                 }
             };
 
-            db.Users.AddRange(users);
+            db.Persons.AddRange(persons);
             db.SaveChanges();
         }
     }

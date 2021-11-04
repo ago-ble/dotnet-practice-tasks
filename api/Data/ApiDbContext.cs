@@ -8,5 +8,9 @@ namespace api.Data
         public ApiDbContext(DbContextOptions<ApiDbContext> options) : base(options) { }
 
         public DbSet<User> Users { get; set; }
+        
+        public DbSet<Person> Persons { get; set;}
+        
+        public DbSet<Animal> Animals { get; set;}
     }
 }
